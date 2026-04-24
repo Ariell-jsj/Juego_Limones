@@ -10,18 +10,25 @@ function iniciar(){
     dibujarPersonaje();
 }
 
+//suelo y personaje
 function dibujarSuelo(){
     ctx.fillStyle="green";
     ctx.fillRect(0,canvas.height-ALTURA_SUELO,canvas.width,ALTURA_SUELO);
 }
-
 function dibujarPersonaje(){
     ctx.fillStyle="yellow";
     ctx.fillRect(personajeX,canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE),ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
 
+
+//mover izquierda
 function moverIzquierda(){
     personajeX=personajeX-10;
+    actiualizarPantalla();
+}
+//mover derecha
+function moverDerecha(){
+    personajeX=personajeX+10;
     actiualizarPantalla();
 }
 
