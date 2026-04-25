@@ -9,6 +9,7 @@ const ALTURA_LIMON=20;
 
 
 let personajeX=canvas.width/2;
+let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
 let limonesX=canvas.width/2;
 let limonesY=5;
 
@@ -25,7 +26,7 @@ function dibujarSuelo(){
 }
 function dibujarPersonaje(){
     ctx.fillStyle="yellow";
-    ctx.fillRect(personajeX,canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE),ANCHO_PERSONAJE,ALTURA_PERSONAJE);
+    ctx.fillRect(personajeX,personajeY,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
 
 
@@ -33,11 +34,13 @@ function dibujarPersonaje(){
 function moverIzquierda(){
     personajeX=personajeX-10;
     actiualizarPantalla();
+    detectarColision();
 }
 //mover derecha
 function moverDerecha(){
     personajeX=personajeX+10;
     actiualizarPantalla();
+    detectarColision();
 }
 
 function actiualizarPantalla(){
@@ -62,4 +65,14 @@ function bajarLimones(){
     limonesY = limonesY +10;
     actiualizarPantalla(); 
 
+}
+
+function detectarColision(){
+    if(limonesX+ANCHO_LIMON > personajeX &&
+         limonesX < personajeX + ANCHO_PERSONAJE&&
+        limonesY+ALTURA_LIMON > personajeY &&
+         limonesY < personajeY + ALTURA_PERSONAJE){
+         alert("¡Has atrapado un limón!");
+        }
+    
 }
