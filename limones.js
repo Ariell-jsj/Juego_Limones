@@ -14,9 +14,11 @@ let limonesX=canvas.width/2;
 let limonesY=0;
 let puntaje=0; 
 let vidas=3;
+let velocidaCaida=200;
 
 
 function iniciar(){
+    setInterval(bajarLimones,velocidaCaida);//cada 500 milisegundos se ejecuta la función bajarLimones
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimones();
