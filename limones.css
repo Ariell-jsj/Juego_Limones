@@ -5,13 +5,14 @@
 }
 
 body{
+
     font-family:Arial, sans-serif;
 
-    background: linear-gradient(
-        180deg,
-        #87ceeb 0%,
-        #c7f0ff 100%
-    );
+    background-image:url("https://i.pinimg.com/originals/90/8d/ee/908deec53fa456c6f4274714cff42a9e.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
     min-height:100vh;
 
@@ -24,140 +25,235 @@ body{
 
 .contenedor{
 
-    width:800px;
+    width:850px;
 
-    background:white;
+    background:rgba(20,20,20,0.88);
 
-    border-radius:25px;
+    border:6px solid #3d2b1f;
 
     padding:25px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-
     text-align:center;
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,0.7),
+    inset 0 0 10px rgba(255,255,255,0.05);
 }
 
 h1{
-    color:#f1b400;
-    font-size:42px;
+
+    color:#ffe066;
+
+    font-size:48px;
+
     margin-bottom:10px;
+
+    text-shadow:
+    4px 4px 0 #000;
 }
 
 .subtitulo{
-    color:#666;
-    margin-bottom:10px;
+
+    color:white;
+
     font-size:18px;
+
+    margin-bottom:12px;
+
+    text-shadow:2px 2px 0 #000;
 }
 
 h2{
-    color:#444;
+
+    color:#8cff66;
+
     margin-bottom:20px;
-    font-size:20px;
+
+    text-shadow:2px 2px 0 #000;
 }
 
 canvas{
 
-    background:linear-gradient(
-        180deg,
-        #6ed6ff 0%,
-        #bff4ff 100%
+    background:
+    linear-gradient(
+        #87ceeb 0%,
+        #87ceeb 70%,
+        #4e9a3f 70%,
+        #4e9a3f 100%
     );
 
-    border:5px solid #f1b400;
-
-    border-radius:20px;
+    border:8px solid #5b3b24;
 
     display:block;
 
     margin:20px auto;
 
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    image-rendering:pixelated;
+
+    box-shadow:
+    8px 8px 0 #000;
 }
 
-.panel{
+.card{
+
+    background:#6b4f2a;
+
+    border:5px solid #3d2b1f;
+
+    padding:15px 30px;
+
+    min-width:150px;
+
+    box-shadow:6px 6px 0 #000;
+}
+
+.card h3{
+
+    color:white;
+
+    margin-bottom:10px;
+
+    text-shadow:2px 2px 0 #000;
+}
+
+.card span{
+
+    color:#ffe066;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    text-shadow:3px 3px 0 #000;
+}
+
+
+/* BOTONES */
+
+.botones button{
+
+    width:85px;
+
+    height:85px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:34px;
+
+    color:white;
+
+    image-rendering:pixelated;
+
+    transition:0.1s;
+
+    box-shadow:
+    inset -4px -4px 0 rgba(0,0,0,0.4),
+    inset 4px 4px 0 rgba(255,255,255,0.2),
+    6px 6px 0 #000;
+}
+
+/* IZQUIERDA */
+
+.izquierda{
+
+    background:#43a047;
+}
+
+/* DERECHA */
+
+.derecha{
+
+    background:#1e88e5;
+}
+
+/* REINICIAR */
+
+.reiniciar{
+
+    background:#e53935 !important;
+}
+
+/* EFECTOS */
+
+.botones button:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    filter:brightness(1.1);
+}
+
+.botones button:active{
+
+    transform:translateY(4px);
+
+    box-shadow:
+    inset -2px -2px 0 rgba(0,0,0,0.4),
+    inset 2px 2px 0 rgba(255,255,255,0.2),
+    2px 2px 0 #000;
+}
+
+
+.marcador{
+
+    width:160px;
+
+    height:180px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.game-layout{
 
     display:flex;
 
     justify-content:center;
+
+    align-items:center;
 
     gap:20px;
 
     margin-top:20px;
 }
 
-.card{
+.centro-juego{
 
-    background:#fff8dc;
+    display:flex;
 
-    padding:15px 30px;
+    flex-direction:column;
 
-    border-radius:15px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-
-    min-width:140px;
-}
-
-.card h3{
-    color:#666;
-    margin-bottom:8px;
-}
-
-.card span{
-    font-size:30px;
-    font-weight:bold;
-    color:#f1b400;
+    align-items:center;
 }
 
 .botones{
+
     margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
 }
 
-.botones button{
+.marcador{
 
-    border:none;
+    width:130px;
 
-    padding:14px 22px;
+    height:120px;
 
-    margin:8px;
+    display:flex;
 
-    border-radius:12px;
+    flex-direction:column;
 
-    font-size:16px;
+    justify-content:center;
 
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.botones button:hover{
-
-    transform:scale(1.08);
-
-}
-
-.botones button:active{
-
-    transform:scale(0.95);
-
-}
-
-.botones button:nth-child(1){
-
-    background:#4caf50;
-    color:white;
-}
-
-.botones button:nth-child(2){
-
-    background:#2196f3;
-    color:white;
-}
-
-.reiniciar{
-
-    background:#ff9800 !important;
-    color:white;
+    align-items:center;
 }

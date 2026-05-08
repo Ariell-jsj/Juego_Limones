@@ -18,35 +18,41 @@
 
     <h2>Autor: Ariell</h2>
 
-    <canvas id="areaJuego" width="600" height="400"></canvas>
+ <div class="game-layout">
 
-    <div class="panel">
-
-      <div class="card">
-        <h3>Puntaje</h3>
+    <div class="card marcador">
+        <h3>PUNTAJE</h3>
         <span id="txtPuntaje">0</span>
-      </div>
+    </div>
 
-      <div class="card">
-        <h3>Vidas</h3>
+    <div class="centro-juego">
+
+        <canvas id="areaJuego" width="600" height="400"></canvas>
+
+        <div class="botones">
+
+            <button onclick="moverIzquierda();" class="izquierda">
+                ⬅
+            </button>
+
+            <button onclick="reiniciarJuego();" class="reiniciar">
+            ☠
+            </button>
+
+            <button onclick="moverDerecha();" class="derecha">
+                ➡
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="card marcador">
+        <h3>VIDAS</h3>
         <span id="txtVidas">3</span>
-      </div>
-
     </div>
 
-    <div class="botones">
-      <button onclick="moverIzquierda();">
-        ⬅ Izquierda
-      </button>
-
-      <button onclick="moverDerecha();">
-        Derecha ➡
-      </button>
-
-      <button onclick="reiniciarJuego();" class="reiniciar">
-        🔄 Reiniciar
-      </button>
-    </div>
+</div>
 
   </div>
 
