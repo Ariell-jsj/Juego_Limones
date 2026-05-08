@@ -100,3 +100,11 @@ function aparecerLimones(){
     limonesY=0;
     actiualizarPantalla();
 }
+
+function reiniciarJuego(){
+    puntaje=0;
+    vidas=3;
+    mostrarEnSpan("txtPuntaje",puntaje);
+    mostrarEnSpan("txtVidas",vidas);
+    aparecerLimones();
+}
