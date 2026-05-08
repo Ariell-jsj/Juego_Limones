@@ -16,9 +16,11 @@ let puntaje=0;
 let vidas=3;
 let velocidaCaida=200;
 
+let intervaloJuego;
+
 
 function iniciar(){
-    setInterval(bajarLimones,velocidaCaida);//cada 500 milisegundos se ejecuta la función bajarLimones
+    intervaloJuego=setInterval(bajarLimones,velocidaCaida);//cada 500 milisegundos se ejecuta la función bajarLimones
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimones();
@@ -87,12 +89,24 @@ function detectarAtrapado(){
 }
 
 function detectarPiso(){
-    if(limonesY==canvas.height-ALTURA_SUELO-ALTURA_LIMON){
-        aparecerLimones();
-        vidas=vidas-1;
-        mostrarEnSpan("txtVidas",vidas);
-    }
 
+    if(limonesY >= canvas.height-ALTURA_SUELO-ALTURA_LIMON){
+
+        aparecerLimones();
+
+        vidas=vidas-1;
+
+        mostrarEnSpan("txtVidas",vidas);
+
+        // SI YA NO HAY VIDAS
+        if(vidas==0){
+
+            clearInterval(intervaloJuego);
+
+            alert("GAME OVER");
+
+        }
+    }
 }
 
 function aparecerLimones(){
