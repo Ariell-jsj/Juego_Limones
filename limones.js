@@ -116,9 +116,17 @@ function aparecerLimones(){
 }
 
 function reiniciarJuego(){
+
+    clearInterval(intervaloJuego);
+
     puntaje=0;
     vidas=3;
+
     mostrarEnSpan("txtPuntaje",puntaje);
     mostrarEnSpan("txtVidas",vidas);
+
     aparecerLimones();
+
+    // VOLVER A INICIAR EL JUEGO
+    intervaloJuego = setInterval(bajarLimones, velocidaCaida);
 }
